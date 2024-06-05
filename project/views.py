@@ -39,3 +39,12 @@ def cadastro_usuario_view(request):
     else:
         form = UserCreationForm()
     return render(request, 'formUsuario.html', {'form': form})
+
+def index_view(request):
+    if request.user.is_authenticated:
+        return redirect('home')
+    else:
+        return redirect('login')
+
+def home(request):
+    return render(request, 'home.html')
