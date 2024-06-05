@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/homeStyle.css">
+    <link rel="stylesheet" href="{% static 'styles/homeStyle.css' %}" >
     <title>EUROstore | Ecommerce</title>
 </head>
 <body>
@@ -22,8 +23,9 @@
         </ul>
     </nav>
     <div class="nav-icon-container">
-        <img src="/templates/images/cart.png" alt="">
-        <img src="/templates/images/menu.png" alt="" class="menu-button">
+        <a href="{% url 'logout' %}" class="button-logout">Sair</a>
+        <img src="{% static 'images/cart.png' %}" alt="">
+        <img src="{% static 'images/menu.png' %}" alt="" class="menu-button">
     </div>
     </div>
     </div>
@@ -39,7 +41,7 @@
                     <button>Comprar &#8594;</button>
                 </div>
                 <div class="header-bottom-side-right">
-                    <img src="/templates/images/gaming-msi-header.png" alt="">
+                    <img src="{% static 'images/gaming-msi-header.png' %}" alt="">
                 </div>
             </div>
         </div>
@@ -49,9 +51,9 @@
     <div class="gray-background">
         <div class="page-inner-content">
             <div class="cols cols-3">
-                <img src="/templates/images/products/product-1.png" alt=""/>
-                <img src="/templates/images/products/product-2.png" alt=""/>
-                <img src="/templates/images/products/product-3.png" alt=""/>
+                <img src="{% static 'images/products/product-1.png' %}" alt=""/>
+                <img src="{% static 'images/products/product-2.png' %}" alt=""/>
+                <img src="{% static 'images/products/product-3.png' %}" alt=""/>
             </div>
         </div>
     </div>
@@ -62,25 +64,25 @@
             <div class="subtitle-underline"></div>
             <div class="cols cols-4">
                 <div class="product">
-                    <img src="/templates/images/products/product-4.png" alt="" />
+                    <img src="{% static 'images/products/product-4.png' %}" alt="" />
                     <p class="product-name">Combo Gamer</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 120,00</p>
                 </div>
                 <div class="product">
-                    <img src="/templates/images/products/product-5.png" alt="" />
+                    <img src="{% static 'images/products/product-5.png' %}" alt="" />
                     <p class="product-name">Nvidia Geforce GTX 1650 MSI</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 1200,00</p>
                 </div>
                 <div class="product">
-                    <img src="/templates/images/products/product-6.png" alt="" />
+                    <img src="{% static 'images/products/product-6.png' %}" alt="" />
                     <p class="product-name">Controle Ps5</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 400,00</p>
                 </div>
                 <div class="product">
-                    <img src="/templates/images/products/product-7.png" alt="" />
+                    <img src="{% static 'images/products/product-7.png' %}" alt="" />
                     <p class="product-name">Cadeira Gamer</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 1.000,00</p>
@@ -93,49 +95,49 @@
                 <div class="subtitle-underline"></div>
                 <div class="cols cols-4">
                     <div class="product">
-                        <img src="/templates/images/products/product-8.png" alt="" />
+                        <img src="{% static 'images/products/product-8.png' %}" alt="" />
                         <p class="product-name">Iphone 14 Pro Max 512GB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 10.000,00</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-9.png" alt="" />
+                        <img src="{% static 'images/products/product-9.png' %}" alt="" />
                         <p class="product-name">Samsung Galaxy S23 Ultra 1 TB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 6.000,00</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-10.png" alt="" />
+                        <img src="{% static 'images/products/product-10.png' %}" alt="" />
                         <p class="product-name">Asus Rog Phone 3 Gamer</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 400,00</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-11.png" alt="" />
+                        <img src="{% static 'images/products/product-11.png' %}" alt="" />
                         <p class="product-name">Xiaomi MI 13 Ultra</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 3.499,90</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-12.png" alt="" />
+                        <img src="{% static 'images/products/product-12.png' %}" alt="" />
                         <p class="product-name">Xbox Series X</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 2.999,99</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-13.png" alt="" />
+                        <img src="{% static 'images/products/product-13.png' %}" alt="" />
                         <p class="product-name">Racingwheel GT480 Ferrari</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 900,00</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-14.png" alt="" />
+                        <img src="{% static 'images/products/product-14.png' %}" alt="" />
                         <p class="product-name">PlayStation 5</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 3.100,00</p>
                     </div>
                     <div class="product">
-                        <img src="/templates/images/products/product-15.png" alt="" />
+                        <img src="{% static 'images/products/product-15.png' %}" alt="" />
                         <p class="product-name">Pc Gamer RX 7700XT</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 6.000,00</p>
@@ -152,7 +154,7 @@
                     <button>Comprar &#8594;</button>
                 </div>
                 <div class="header-bottom-side-right">
-                    <img src="/templates/images/exclusive.png" alt="">
+                    <img src="{% static 'images/exclusive.png' %}" alt="">
                 </div>
             </div>
         </div>
@@ -178,7 +180,7 @@
                     <p>"</p>
                     <p>O melhor website Ecommerce moderno e responsivo, vou compartilhar o site com o maior numero de pessoas que eu conseguir.
                     </p>
-                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                     <p>Misael Willian</p>
                 </div>
             </div>
@@ -192,8 +194,8 @@
             <p>Baixe nosso aplicativo</p>
             <p>Baixe nossa aplicação para Android e iOS</p>
             <div>
-                <img src="/templates/images/app-store.png" alt="" />
-                <img src="/templates/images/play-store.png" alt="" />
+                <img src="{% static 'images/app-store.png' %}" alt="" />
+                <img src="{% static 'images/play-store.png' %}" alt="" />
             </div>
         </div>
 
