@@ -3,6 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from .models import Product
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+
 
 def login_view(request):
     if request.method == 'POST':
@@ -48,3 +52,29 @@ def index_view(request):
 
 def home(request):
     return render(request, 'home.html')
+
+def add_product(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        quantity = request.POST['quantity']
+        price = request.POST['price']
+        Product.objects.create(name=name, quantity=quantity, price=price)
+        return redirect('home')  # Redireciona para a página inicial após adicionar o produto
+    return render(request, 'add_product.html')
+
+def buy_product(request, product_id):
+    # Obtenha o produto do banco de dados
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Verifique se há quantidade disponível para compra
+    if product.quantity > 0:
+        # Decrementa a quantidade disponível
+        product.quantity -= 1
+        product.save()
+
+        # Retorne uma resposta de sucesso
+        return JsonResponse({'message': 'Produto comprado com sucesso!'})
+
+    else:
+        # Retorne uma resposta de erro se não houver quantidade disponível
+        return JsonResponse({'error': 'Produto esgotado.'}, status=400)
