@@ -4,9 +4,26 @@
   margin: 0;
 }
 
+.buy-button {
+  background-color: #4CAF50; /* verde */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buy-button:hover {
+  background-color: #45a049; /* verde mais escuro quando hover */
+}
+
 /* Estilo para o botão Sair */
 .button-logout{
-    background-color: #f44336; /* Cor de fundo do botão */
+    background-color: #0084ff; /* Cor de fundo do botão */
     color: white; /* Cor do texto */
     padding: 10px 20px; /* Espaçamento interno */
     text-align: center; /* Centralizar o texto */
@@ -18,7 +35,7 @@
 }
 
 .button-logout:hover {
-    background-color: #d32f2f; /* Cor de fundo ao passar o mouse */
+    background-color: #f44336; /* Cor de fundo ao passar o mouse */
     transition: background-color 0.3s; /* Transição suave */
 }
 

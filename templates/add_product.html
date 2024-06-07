@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/homeStyle.css' %}" >
+    <title>Gerenciar Produtos - EUROstore</title>
+</head>
+<body>
+    <!-- Nav Bar -->
+    <div class="navbar show-menu">
+        <div class="header-inner-content show-menu">
+            <h1 class="logo">EURO<span>store</span></h1>
+        
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>Produtos</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+            <li>Conta</li>
+        </ul>
+    </nav>
+    <div class="nav-icon-container">
+        <a href="{% url 'logout' %}" class="button-logout">Sair</a>
+        <img src="{% static 'images/cart.png' %}" alt="">
+        <img src="{% static 'images/menu.png' %}" alt="" class="menu-button">
+    </div>
+    </div>
+    </div>
+
+    <div class="page-inner-content">
+        <h2 class="section-title">Adicionar Produto</h2>
+        <!-- Formulário para adicionar um produto -->
+        <form method="post" action="{% url 'add-product' %}">
+            {% csrf_token %}
+            <label for="name">Nome do produto:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="quantity">Quantidade:</label><br>
+            <input type="number" id="quantity" name="quantity" required><br>
+            <label for="price">Preço:</label><br>
+            <input type="number" id="price" name="price" step="0.01" required><br>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+
+        <!-- Lista de todos os produtos -->
+        <h2 class="section-title">Lista de Produtos</h2>
+        <ul>
+            {% for product in products %}
+                <li>
+                    {{ product.name }} - {{ product.quantity }} unidades - R$ {{ product.price }}
+                    <a href="{% url 'edit-product' product.id %}">Editar</a> | 
+                    <a href="{% url 'delete-product' product.id %}">Excluir</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <footer class="gray-background">
+        <!-- Conteúdo do rodapé -->
+    </footer>
+
+    <script>
+        // Script para mostrar/ocultar o menu
+        const navbar = document.querySelector(".navbar");
+        const menuButton = document.querySelector(".menu-button");
+        menuButton.addEventListener("click", () => {
+            navbar.classList.toggle("show-menu");
+        });
+    </script>
+</body>
+</html>
