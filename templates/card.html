@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Card</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            display: inline-block;
+            width: 200px;
+            position: relative;
+        }
+        .card-actions {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+        }
+        .card-actions a {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    {% for product in products %}
+        <div class="card">
+            <div class="card-actions">
+                <a href="{% url 'edit-product' product.id %}"><i class="fas fa-edit"></i></a>
+                <a href="{% url 'delete-product' product.id %}"><i class="fas fa-trash-alt"></i></a>
+            </div>
+            <p>Nome do Produto: {{ product.name }}</p>
+            <p>Preço: {{ product.price }}</p>
+            <p>Quantidade: {{ product.quantity }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
