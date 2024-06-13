@@ -441,3 +441,13 @@ main {
 }
 
 /* Footer */
+.no-style-link {
+  color: inherit; /* Mantém a cor do texto do elemento pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.no-style-link:hover {
+  color: inherit; /* Mantém a cor do texto do elemento pai ao passar o mouse */
+  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}
+

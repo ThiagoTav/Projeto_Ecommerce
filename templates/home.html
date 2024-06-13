@@ -19,7 +19,7 @@
             <li>Produtos</li>
             <li>Sobre</li>
             <li>Contato</li>
-            <li>Conta</li>
+            <li><a href="{% url 'add-product' %}" class="no-style-link">Conta</a></li>
         </ul>
     </nav>
     <div class="nav-icon-container">
@@ -38,7 +38,7 @@
                     <p>
                         Sucesso nem sempre tem haver com grandeza. Tem haver com consistência. Trabalho duro consistente supera o sucesso. A grandeza virá.
                     </p>
-                    <button>Comprar &#8594;</button>
+                    <button class="buy-button" data-product-id="6">Comprar &#8594;</button>
                 </div>
                 <div class="header-bottom-side-right">
                     <img src="{% static 'images/gaming-msi-header.png' %}" alt="">
@@ -75,18 +75,21 @@
                     <p class="product-name">Nvidia Geforce GTX 1650 MSI</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 1200,00</p>
+                    <button class="buy-button" data-product-id="2">Comprar</button>
                 </div>
                 <div class="product">
                     <img src="{% static 'images/products/product-6.png' %}" alt="" />
                     <p class="product-name">Controle Ps5</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 400,00</p>
+                    <button class="buy-button" data-product-id="4">Comprar</button>
                 </div>
                 <div class="product">
                     <img src="{% static 'images/products/product-7.png' %}" alt="" />
                     <p class="product-name">Cadeira Gamer</p>
                     <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                     <p class="product-price"><span>R$</span> 1.000,00</p>
+                    <button class="buy-button" data-product-id="5">Comprar</button>
                 </div>
             </div>
 
@@ -100,48 +103,56 @@
                         <p class="product-name">Iphone 14 Pro Max 512GB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 10.000,00</p>
+                        <button class="buy-button" data-product-id="7">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-9.png' %}" alt="" />
                         <p class="product-name">Samsung Galaxy S23 Ultra 1 TB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 6.000,00</p>
+                        <button class="buy-button" data-product-id="8">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-10.png' %}" alt="" />
                         <p class="product-name">Asus Rog Phone 3 Gamer</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
-                        <p class="product-price"><span>R$</span> 400,00</p>
+                        <p class="product-price"><span>R$</span> 4000,00</p>
+                        <button class="buy-button" data-product-id="9">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-11.png' %}" alt="" />
                         <p class="product-name">Xiaomi MI 13 Ultra</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 3.499,90</p>
+                        <button class="buy-button" data-product-id="10">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-12.png' %}" alt="" />
                         <p class="product-name">Xbox Series X</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 2.999,99</p>
+                        <button class="buy-button" data-product-id="11">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-13.png' %}" alt="" />
                         <p class="product-name">Racingwheel GT480 Ferrari</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 900,00</p>
+                        <button class="buy-button" data-product-id="12">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-14.png' %}" alt="" />
                         <p class="product-name">PlayStation 5</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 3.100,00</p>
+                        <button class="buy-button" data-product-id="13">Comprar</button>
                     </div>
                     <div class="product">
                         <img src="{% static 'images/products/product-15.png' %}" alt="" />
                         <p class="product-name">Pc Gamer RX 7700XT</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price"><span>R$</span> 6.000,00</p>
+                        <button class="buy-button" data-product-id="14">Comprar</button>
                 </div>
         </div>
     </div>
@@ -152,7 +163,7 @@
                     <h2>Smart Band 4</h2>
                     <p>
                         O Mi Smart Band 4 tem uma tela AMOLED 39.9% maior que o Mi Band 3, tela completamente digital com brilho ajustável.
-                    <button>Comprar &#8594;</button>
+                    <button class="buy-button" data-product-id="15">Comprar &#8594;</button>
                 </div>
                 <div class="header-bottom-side-right">
                     <img src="{% static 'images/exclusive.png' %}" alt="">
