@@ -12,5 +12,5 @@ urlpatterns = [
     path('home/', views.home_view, name='home'),
     path('', views.index_view, name='index'),
     path('add-product/', add_product, name='add-product'),
-
+    
 ]
