@@ -2,8 +2,8 @@
 from django.urls import path
 from . import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from .views import add_product
-
+from .views import *
+from project.views import *
 
 urlpatterns = [
     path('login/', views.login_view, name='login'),

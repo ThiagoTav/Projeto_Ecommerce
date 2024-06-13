@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
+from project.forms import ProductForm
 from .models import Product
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -78,3 +79,28 @@ def buy_product(request, product_id):
     else:
         # Retorne uma resposta de erro se não houver quantidade disponível
         return JsonResponse({'error': 'Produto esgotado.'}, status=400)
+
+@login_required
+def edit_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
+            return redirect('product-list')
+    else:
+        form = ProductForm(instance=product)
+    return render(request, 'edit_product.html', {'form': form})
+
+@login_required
+def delete_product(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'POST':
+        product.delete()
+        return redirect('product-list')
+    return render(request, 'confirm_delete.html', {'product': product})
+
+@login_required
+def product_list_view(request):
+    products = Product.objects.all()
+    return render(request, 'card.html', {'products': products})
