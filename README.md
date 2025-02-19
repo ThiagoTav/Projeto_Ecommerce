@@ -136,3 +136,12 @@ O sistema será desenvolvido seguindo o padrão de arquitetura MVT do Django, qu
 #### Suporte Pós-Lançamento
 - **Versionamento:** Continuidade do desenvolvimento e manutenção via Git para gerenciar versões e correções de bugs.
 - **Documentação:** Manutenção de documentação clara e atualizada para facilitar a manutenção futura.
+
+### Crie e Ative um Ambiente Virtual
+python -m venv .env 
+.\.env\Scripts\activate
+pip install -r requirements.txt
+python manage.py migrate
+
+### Inicie o Servidor de Desenvolvimento
+python manage.py runserver
