@@ -138,10 +138,10 @@ O sistema será desenvolvido seguindo o padrão de arquitetura MVT do Django, qu
 - **Documentação:** Manutenção de documentação clara e atualizada para facilitar a manutenção futura.
 
 ### Crie e Ative um Ambiente Virtual
-python -m venv .env 
-.\.env\Scripts\activate
-pip install -r requirements.txt
-python manage.py migrate
+- python -m venv .env 
+- .\.env\Scripts\activate
+- pip install -r requirements.txt
+- python manage.py migrate
 
 ### Inicie o Servidor de Desenvolvimento
-python manage.py runserver
+- python manage.py runserver
